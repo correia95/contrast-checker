@@ -1,0 +1,88 @@
+:root {
+  --bg: #f5f6f9;
+  --card: #ffffff;
+  --card-2: #eef0f5;
+  --ink: #191c24;
+  --ink-soft: #5d6474;
+  --line: #e0e3ea;
+  --brand: #4b5bd6;
+  --pass: #1f8f4d;
+  --pass-bg: #e6f5ec;
+  --fail: #c73a3a;
+  --fail-bg: #fbe9e9;
+  --radius: 14px;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #10131a;
+    --card: #191d27;
+    --card-2: #12151d;
+    --ink: #eef1f6;
+    --ink-soft: #9aa1b1;
+    --line: #2a2f3b;
+    --brand: #7c8bff;
+    --pass: #3ec06f;
+    --pass-bg: #123122;
+    --fail: #ff6b6b;
+    --fail-bg: #331819;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5; -webkit-font-smoothing: antialiased;
+}
+.app { max-width: 620px; margin: 0 auto; padding: 24px 14px 56px; }
+
+.hero { text-align: center; margin-bottom: 16px; }
+.hero h1 { font-size: clamp(1.5rem, 5vw, 2rem); margin: 0 0 6px; letter-spacing: -0.02em; }
+.tagline { margin: 0 auto; max-width: 44ch; color: var(--ink-soft); font-size: 0.95rem; }
+
+.pickers { display: flex; align-items: flex-end; gap: 10px; }
+.cfield { flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.cfield > span { font-size: 0.75rem; color: var(--ink-soft); font-weight: 600; }
+.crow { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 10px; background: var(--card); overflow: hidden; }
+.crow.bad { border-color: var(--fail); }
+.crow input[type='color'] { width: 42px; height: 42px; border: 0; padding: 0; background: transparent; cursor: pointer; flex: 0 0 auto; }
+.crow .hex { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink); font: inherit; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.95rem; font-weight: 600; padding: 8px; outline: none; text-transform: lowercase; }
+.crow button { border: 0; background: var(--card-2); color: var(--ink-soft); font-size: 0.9rem; width: 36px; align-self: stretch; cursor: pointer; }
+.swap { flex: 0 0 auto; border: 1px solid var(--line); background: var(--card); color: var(--ink); font-size: 1.1rem; width: 40px; height: 42px; border-radius: 10px; cursor: pointer; margin-bottom: 0; }
+
+.preview {
+  margin: 16px 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: background 0.1s, color 0.1s;
+}
+.preview .big { font-size: 24px; font-weight: 700; margin: 0 0 12px; }
+.preview .body { font-size: 16px; margin: 0 0 12px; }
+.preview .small { font-size: 13px; margin: 0; }
+
+.result { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+.ratio { text-align: center; margin-bottom: 14px; }
+.ratio strong { display: block; font-size: clamp(2.2rem, 10vw, 3rem); font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.ratio span { color: var(--ink-soft); font-size: 0.9rem; }
+
+.checks { display: flex; flex-direction: column; gap: 6px; }
+.check { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 9px; font-size: 0.9rem; font-weight: 500; }
+.check.pass { background: var(--pass-bg); color: var(--pass); }
+.check.fail { background: var(--fail-bg); color: var(--fail); }
+.check .mark { font-weight: 800; }
+.check .tag { margin-left: auto; font-weight: 800; font-size: 0.78rem; }
+
+.fix { margin: 14px 0 0; font-size: 0.9rem; color: var(--ink-soft); }
+.chip { border: 1px solid var(--line); border-radius: 7px; padding: 3px 8px; font: inherit; font-family: ui-monospace, Menlo, Consolas, monospace; font-weight: 700; cursor: pointer; }
+
+.disclaimer { max-width: 56ch; margin: 20px auto 0; text-align: center; font-size: 0.8rem; color: var(--ink-soft); }
+
+.explainer { max-width: 640px; margin: 40px auto 0; }
+.explainer h2 { font-size: 1.2rem; margin: 24px 0 6px; }
+.explainer h3 { font-size: 1rem; margin: 16px 0 4px; }
+.explainer h4 { font-size: 0.95rem; margin: 12px 0 2px; }
+.explainer p, .explainer li { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.6; }
+.explainer table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.88rem; }
+.explainer th, .explainer td { border: 1px solid var(--line); padding: 7px 9px; text-align: left; }
+.explainer footer { margin: 28px 0 0; text-align: center; font-size: 0.8rem; color: var(--ink-soft); }

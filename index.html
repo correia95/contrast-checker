@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#4b5bd6" />
+
+    <title>Colour Contrast Checker — WCAG AA / AAA with Live Preview</title>
+    <meta
+      name="description"
+      content="Free WCAG colour contrast checker. Enter a text and background colour and instantly see the contrast ratio and whether it passes WCAG AA and AAA for normal and large text, with a live preview and a suggested fix."
+    />
+    <link rel="canonical" href="https://contrast-checker.correia95.workers.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Colour Contrast Checker (WCAG AA / AAA)" />
+    <meta property="og:description" content="Check text vs background colour contrast against WCAG, with a live preview and a suggested passing colour." />
+    <meta property="og:url" content="https://contrast-checker.correia95.workers.dev/" />
+    <meta property="og:image" content="https://contrast-checker.correia95.workers.dev/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Colour Contrast Checker" />
+    <meta name="twitter:description" content="WCAG AA / AAA contrast checker with live preview and suggested fix." />
+    <meta name="twitter:image" content="https://contrast-checker.correia95.workers.dev/og.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Colour Contrast Checker",
+        "url": "https://contrast-checker.correia95.workers.dev/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "AUD" },
+        "description": "Check colour contrast ratios against WCAG 2.1 AA and AAA thresholds for text and UI components."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What contrast ratio do I need to pass WCAG?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For WCAG 2.1 Level AA you need a contrast ratio of at least 4.5 to 1 for normal text and 3 to 1 for large text. Level AAA raises this to 7 to 1 for normal text and 4.5 to 1 for large text. User interface components and meaningful graphics need at least 3 to 1."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is considered large text for contrast?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Large text is at least 18.66 pixels (14 point) and bold, or at least 24 pixels (18 point) at any weight. Large text has a lower contrast requirement because bigger letterforms are easier to read."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the contrast ratio calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each colour is converted to a relative luminance value using the WCAG formula, then the ratio is (lighter luminance + 0.05) divided by (darker luminance + 0.05). The result ranges from 1 to 1 for identical colours up to 21 to 1 for black on white."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does passing contrast make my site accessible?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is one important requirement but not the whole picture. You also need visible focus indicators, information that is not conveyed by colour alone, readable font sizes, and testing with real assistive technology."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript><p style="text-align:center;padding:20px">This checker needs JavaScript enabled.</p></noscript>
+  </body>
+</html>
