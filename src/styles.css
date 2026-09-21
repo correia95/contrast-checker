@@ -86,3 +86,9 @@ body {
 .explainer table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.88rem; }
 .explainer th, .explainer td { border: 1px solid var(--line); padding: 7px 9px; text-align: left; }
 .explainer footer { margin: 28px 0 0; text-align: center; font-size: 0.8rem; color: var(--ink-soft); }
+
+/* a11y-contrast-fixes (auto, WCAG AA 4.5:1) */
+@media (prefers-color-scheme: light) {
+  .check.pass { color: #1b7e44; }
+  .check.fail { color: #bf3838; }
+}
